@@ -1,6 +1,9 @@
 import styled from 'styled-components'
 import questions from '../../datas/aPropos.json'
 import heroPropos from '../../assets/heroPropos.png'
+import Dropdown from '../../components/Dropdown'
+import '../../styles/Dropdown.css'
+import {useState} from 'react'
 import '../../styles/Hero.css'
 
 const HeroPropos = styled.div`
@@ -19,6 +22,14 @@ const HeroPropos = styled.div`
 }`
 
 function Apropos() {
+  const [clicked, setClicked] = useState("0")
+  const handleToggle = (index) => {
+    if (clicked === index) {
+      return setClicked("0")
+    }
+    setClicked(index)
+  }
+
     return (
       <div className="container">
         <HeroPropos>
@@ -26,12 +37,15 @@ function Apropos() {
           </div>
         </HeroPropos>
 
-        <ul>
-        {questions.map(answer => (
-          <li key={answer.question}>
-            <strong>{answer.question}</strong><br/>{answer.answer}
-          </li>
-        ) )}
+        <ul className='accordion'>
+        {questions.map((answer,idx) => (
+          <Dropdown
+          onToggle={() => handleToggle(idx)}
+          active={clicked === idx}
+          key={idx}
+          faq={answer}
+          />
+        ))}
         </ul>
       </div>
     )
