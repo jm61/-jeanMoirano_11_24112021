@@ -1,7 +1,5 @@
 import styled from 'styled-components'
-//import colors from '../../utils/style/colors'
 import { Link } from 'react-router-dom'
-//import { StyledLink } from '../../utils/style/Atoms'
 
 const ErrorWrapper = styled.div`
   margin: 30px;

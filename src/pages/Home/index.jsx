@@ -46,7 +46,7 @@ function Home() {
         </Hero>
         <CardsContainer>
         {samples.map((details) => (
-          <Link key={`kasa-${details.id}`} to={`/logement/${details.id}`}>
+          <Link key={`kasa-${details.id}`} to={`/unit/${details.id}`}>
             <Card 
               key={details.id}
               label={details.location}
