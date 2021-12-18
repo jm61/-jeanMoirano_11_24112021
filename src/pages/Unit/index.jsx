@@ -8,7 +8,10 @@ import { ReactComponent as ArrowRight} from '../../assets/arrow-right.svg'
 
 const Unit = (props) => {
     let {id} = useParams()
-    const unit = units.find(unit => unit.id === id)
+    let unit = units.find(unit => unit.id === id)
+    if(!unit) {
+        unit = units.find(unit => unit.id === 'c67ab8a7')
+    }
     let {title, rating, description, pictures, location, tags, host, equipments} = unit
 
     const [current, setCurrent] = useState(0)
@@ -16,7 +19,6 @@ const Unit = (props) => {
 
     const nextImg = () => { setCurrent(current === length -1 ? 0 : current + 1) }
     const prevImg = () => { setCurrent(current === 0 ? length -1 : current - 1) }
-    console.log({rating})
 
     if(!Array(props) || props.length <= 0) { return null }
 

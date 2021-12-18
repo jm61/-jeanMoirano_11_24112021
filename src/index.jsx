@@ -25,7 +25,7 @@ ReactDOM.render(
         <Route exact path="/" element={<Home/>} />
         <Route exact path="/apropos" element={<Apropos/>} />
         <Route exact path="/unit/:id" element={<Unit/>}>
-          render={({match}) => <Unit id={match.params.id} />}
+          render={({match}) => <Unit id = {match.params.id} />}
         </Route>
         <Route path="*" element={<Error404/>} />
     </Routes>
