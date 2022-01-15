@@ -1,4 +1,4 @@
-  .right-arrow {
+.right-arrow {
 	position: absolute;
 	top: 40%;
 	right: 180px;
@@ -169,7 +169,6 @@ input {
 }
 
 
-/* Accordion styles */
 .tabs {
   overflow: hidden;
 }
@@ -186,14 +185,10 @@ input {
   background: #FF6060;
   font-weight: bold;
   cursor: pointer;
-  /* Icon */
 }
-/*.tab-label:hover {
-  background: #FF6060;
-}*/
 .tab-label::after {
   content: "❯";
-  transform: rotate(-90deg);
+  transform: rotate(90deg);
   width: 1.5em;
   height: 1.5em;
   text-align: center;
@@ -201,11 +196,11 @@ input {
   font-size: 25px;
 }
 .tab-content {
-  /*max-height: 0;*/
   padding: 0 1em;
-  color: #FF6060;
   background: white;
-  transition: all 0.35s;
+  color: #FF6060;
+  transition: all 0.5s;
+  max-height: 0;
 }
 .tab-close {
   display: flex;
@@ -223,10 +218,9 @@ input:checked + .tab-label {
   background: #FF6060;
 }
 input:checked + .tab-label::after {
-  transform: rotate(90deg);
+  transform: rotate(-90deg);
 }
 input:checked ~ .tab-content {
-  /*max-height: 100vh;*/
-  max-height: 0;
+  max-height: 100%;
   padding: 1em;
 }

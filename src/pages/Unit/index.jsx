@@ -64,7 +64,7 @@ const Unit = (props) => {
 
             <div className="content-container">
                 <div className="tabs content-desc">
-                    <div className="tab ">
+                    <div className="tab">
                         <input type="checkbox" id="chck1" />
                         <label className="tab-label" htmlFor="chck1">Description</label>
                         <div className="tab-content">
